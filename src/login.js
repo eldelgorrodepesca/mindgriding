@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./assets/css/index.css";
-import App from "./App";
+import Login from "./Login";
 import reportWebVitals from "./reportWebVitals";
 
 // Auth0
@@ -18,10 +18,10 @@ ReactDOM.render(
       clientId={clientId}
       redirectUri={window.location.origin}
     >
-      <App />
+      <Login />
     </Auth0Provider>
   </React.StrictMode>,
-  document.getElementById("root")
+  document.getElementById("login")
 );
 
 // If you want to start measuring performance in your app, pass a function

@@ -1,34 +1,37 @@
-import logo from "./logo.svg";
-import "./App.css";
+import React, { useState } from "react";
+import "./assets/css/App.css";
+
+// COMPONENTES
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Slider from "./components/Slider";
+import Sidebar from "./components/Sidebar";
+import Container from "./components/Container";
+import Modal from "./components/Modal";
 
 function App() {
+  var btnString = "Comenzar";
+  const [active, setActive] = useState(false);
+
+  const toggle = () => {
+    setActive(!active);
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <h1 class="title">MIND GRIDING</h1>
-        <nav class="navigation">
-          <ul>
-            <li>
-              <a href="index.html">Inicio</a>
-            </li>
-            <li>
-              <a href="asignaturas.html">Asignaturas</a>
-            </li>
-            <li>
-              <a href="progreso.html">Progreso</a>
-            </li>
-            <li>
-              <a href="calendario.html">Calendario</a>
-            </li>
-            <li>
-              <a href="notas.html">Notas</a>
-            </li>
-            <li>
-              <a href="login.html">Iniciar Sesión</a>
-            </li>
-          </ul>
-        </nav>
-      </header>
+      <Header />
+      <Modal active={active} toggle={toggle}>
+        Formulario LogIn
+      </Modal>
+      <Slider title="Organízate ahora con Mindgriding" btn={btnString} />
+      <div className="center">
+      <br />
+        <button className="btn btn-success" onClick={toggle}>Registrate ya</button>
+        <Container />
+        <Sidebar />
+        <div className="clearfix"></div>
+      </div>
+
+      <Footer />
     </div>
   );
 }
