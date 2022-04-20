@@ -16,6 +16,7 @@ function App() {
   const toggle = () => {
     setActive(!active);
   };
+
   return (
     <div className="App">
       <Header />
@@ -24,8 +25,11 @@ function App() {
       </Modal>
       <Slider title="Organízate ahora con Mindgriding" btn={btnString} />
       <div className="center">
-      <br />
-        <button className="btn btn-success" onClick={toggle}>Registrate ya</button>
+        <br />
+        <button className="btn btn-success" onClick={toggle}>
+          Registrate ya
+        </button>
+        <br />
         <Container />
         <Sidebar />
         <div className="clearfix"></div>

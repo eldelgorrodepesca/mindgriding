@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import logo from "../assets/images/logo.jpg";
+import LoginButton from "./LoginButton";
 
 class Header extends Component {
   render() {

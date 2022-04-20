@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import LoginButton from "./LoginButton";
 
 class Sidebar extends Component {
   render() {
@@ -6,9 +7,7 @@ class Sidebar extends Component {
       <aside id="sidebar">
         <div id="nav-blog" className="sidebar-item">
           <h3>¿Aún no te has registrado?</h3>
-          <a href="registro.html" className="btn btn-success">
-            Regístrate
-          </a>
+          <LoginButton />
         </div>
         
         <div id="search" className="sidebar-item">
