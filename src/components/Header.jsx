@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import logo from "../assets/images/logo.jpg";
-import LoginButton from "./LoginButton";
+import { NavLink } from 'react-router-dom';
 
 class Header extends Component {
   render() {
@@ -19,22 +19,19 @@ class Header extends Component {
           <nav id="menu">
             <ul>
               <li>
-                <a href="index.html">Inicio</a>
+                <NavLink to="/home" activeClassName="active">Inicio</NavLink>
               </li>
               <li>
-                <a href="asignaturas.html">Asignaturas</a>
+                <NavLink to="/asignaturas" activeClassName="active">Asignaturas</NavLink>
               </li>
               <li>
-                <a href="progreso.html">Progreso</a>
+                <NavLink to="/progreso" activeClassName="active">Progreso</NavLink>
               </li>
               <li>
-                <a href="calendario.html">Calendario</a>
+                <NavLink to="/calendario" activeClassName="active">Calendario</NavLink>
               </li>
               <li>
-                <a href="notas.html">Notas</a>
-              </li>
-              <li>
-                <a href="login.html">Iniciar Sesión</a>
+                <NavLink to="/pruebas/Jorge/Carrillo" activeClassName="active">Iniciar Sesión</NavLink>
               </li>
             </ul>
           </nav>
