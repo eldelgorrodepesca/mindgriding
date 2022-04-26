@@ -3,6 +3,7 @@ import * as ReactDOMClient from "react-dom/client";
 import "./assets/css/index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter } from 'react-router-dom';
 
 // Auth0
 import { Auth0Provider } from "@auth0/auth0-react";
@@ -14,16 +15,19 @@ console.log(domain, clientId);
 const rootElement = document.getElementById("root")
 const root = ReactDOMClient.createRoot(rootElement)
 root.render(
-  <React.StrictMode>
-    <Auth0Provider
-      domain={domain}
-      clientId={clientId}
-      redirectUri={window.location.origin}
-    >
-      <App />
-    </Auth0Provider>
-  </React.StrictMode>,
-  
+  <BrowserRouter>
+
+    <React.StrictMode>
+      <Auth0Provider
+        domain={domain}
+        clientId={clientId}
+        redirectUri={window.location.origin}
+      >
+        <App />
+      </Auth0Provider>
+    </React.StrictMode>,
+  </BrowserRouter>
+
 );
 
 reportWebVitals();
