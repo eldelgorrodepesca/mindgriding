@@ -1,10 +1,36 @@
 import React, { Component } from 'react'
+import { NavLink } from 'react-router-dom';
 
 // COMPONENTES
 import Slider from './Slider'
 import Sidebar from './Sidebar'
 
-export class Asignaturas extends Component {
+class Asignaturas extends Component {
+
+    nombreAsignatura = React.createRef
+    nombreProfesor = React.createRef
+    numeroTemas = React.createRef
+
+    state = {
+        asignatura: {}
+    }
+
+    crearAsignatua = (e) => {
+        e.preventDefautl()
+
+        var asignatura = {
+            nombreAsignatura: this.nombreAsignatura.current.value,
+            nombreProfesor: this.nombreProfesor.current.value,
+            numeroTemas: this.numeroTemas.current.value
+        }
+
+        this.state({
+            asignatura: asignatura
+        })
+
+        console.log(asignatura);
+    } 
+
     render() {
         return (
             <div id='blog'>
@@ -15,6 +41,9 @@ export class Asignaturas extends Component {
 
                 <div className='center'>
                     <div id='content'>
+                    <button>
+                        <NavLink to="/nueva-asignatura">Nueva Asignatura</NavLink>
+                    </button>
                         {/* Logica para creacion de asignaturas */}
                     </div>
                     <Sidebar

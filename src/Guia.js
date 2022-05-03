@@ -13,6 +13,7 @@ import Home from './components/Home';
 import Asignaturas from './components/Asignaturas';
 import Calificaciones from './components/Calificaciones';
 import Calendario from './components/Calendario';
+import NuevaAsignatura from './components/NuevaAsignatura';
 
 class Guia extends Component {
     render() {
@@ -26,6 +27,7 @@ class Guia extends Component {
                     <Route exact path='/asignaturas' component={Asignaturas} />
                     <Route exact path='/calificaciones' component={Calificaciones} />
                     <Route exact path='/calendario' component={Calendario} />
+                    <Route exact path='/nueva-asignatura' component={NuevaAsignatura} />
 
                     <Route component={Error} /> {/* Error: 404 */}
                 </Switch>
