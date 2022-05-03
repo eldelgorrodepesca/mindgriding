@@ -32,6 +32,16 @@ class NuevaAsignatura extends Component {
               </div>
 
               <div className="form-group">
+                <label htmlFor="descripcionAsignatura">Descripción</label>
+                <input
+                  type="textarea"
+                  name="descripcionAsignatura"
+                  ref={this.descripcionAsignatura}
+                  required
+                />
+              </div>
+
+              <div className="form-group">
                 <label htmlFor="numeroTemas">Número de temas</label>
                 <input
                   type="numb"
