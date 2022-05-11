@@ -4,7 +4,6 @@ import { NavLink } from 'react-router-dom';
 // COMPONENTES
 import Slider from './Slider'
 import Sidebar from './Sidebar'
-import AsignaturaCard from './AsignaturaCard';
 
 class Asignaturas extends Component {
 
@@ -46,9 +45,6 @@ class Asignaturas extends Component {
                         <NavLink to="/nueva-asignatura">Nueva Asignatura</NavLink>
                     </button>
                         {/* Logica para creacion de asignaturas */}
-                        <AsignaturaCard />
-                        <AsignaturaCard />
-                        <AsignaturaCard />
                     </div>
                     <Sidebar
                         blog='false'
