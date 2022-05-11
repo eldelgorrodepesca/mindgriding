@@ -4,12 +4,12 @@ import { NavLink } from 'react-router-dom';
 // COMPONENTES
 import Slider from './Slider'
 import Sidebar from './Sidebar'
+import Card from './Card';
 
 class Asignaturas extends Component {
 
     nombreAsignatura = React.createRef
     nombreProfesor = React.createRef
-    numeroTemas = React.createRef
 
     state = {
         asignatura: {}
@@ -20,8 +20,7 @@ class Asignaturas extends Component {
 
         var asignatura = {
             nombreAsignatura: this.nombreAsignatura.current.value,
-            nombreProfesor: this.nombreProfesor.current.value,
-            numeroTemas: this.numeroTemas.current.value
+            nombreProfesor: this.nombreProfesor.current.value
         }
 
         this.state({
@@ -33,26 +32,28 @@ class Asignaturas extends Component {
 
     render() {
         return (
-            <div id='blog'>
-                <Slider
-                    title='ASIGNATURAS'
-                    size='slider-small'
-                />
-
-                <div className='center'>
-                    <div id='content'>
-                    <button>
-                        <NavLink to="/nueva-asignatura">Nueva Asignatura</NavLink>
-                    </button>
-                        {/* Logica para creacion de asignaturas */}
-                    </div>
-                    <Sidebar
-                        blog='false'
-                    />
+          <div id="blog">
+            <Slider title="ASIGNATURAS" size="slider-small" />
+    
+            <div className="center">
+              <div id="content">
+                {/* Logica para creacion de asignaturas */}
+                <div className="card-container">
+                  <Card />
+                  <Card />
+                  <Card />
                 </div>
+    
+                <button className="btn btn-success">
+                  <NavLink to="/nueva-asignatura">+ Asignatura</NavLink>
+                </button>
+              </div>
+    
+              <Sidebar blog="false" />
             </div>
-        )
+          </div>
+        );
+      }
     }
-}
-
-export default Asignaturas
+    
+    export default Asignaturas;

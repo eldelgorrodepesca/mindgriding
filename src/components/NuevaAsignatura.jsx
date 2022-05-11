@@ -2,6 +2,28 @@ import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 
 class NuevaAsignatura extends Component {
+  nombreAsignaturaRef = React.createRef();
+  nombreProfesorRef = React.createRef();
+
+  state = {
+    asignatura: {},
+  };
+
+  crearAsignatura = (e) => {
+    e.preventDefault();
+
+    var asignatura = {
+      nombreAsignatura: this.nombreAsignaturaRef.current.value,
+      nombreProfesor: this.nombreProfesorRef.current.value,
+    };
+
+    this.setState({
+      asginatura: asignatura,
+    });
+
+    console.log(asignatura);
+  };
+
   render() {
     return (
       <div id="formulario">
@@ -32,25 +54,11 @@ class NuevaAsignatura extends Component {
               </div>
 
               <div className="form-group">
-                <label htmlFor="descripcionAsignatura">Descripción</label>
-                <input
-                  type="textarea"
-                  name="descripcionAsignatura"
-                  ref={this.descripcionAsignatura}
-                  required
-                />
+                <label htmlFor="imagenAsignatura">Foto de la asignatura</label>
+                <br />
+                <input type="file" name="imagenAsignatura" />
               </div>
-
-              <div className="form-group">
-                <label htmlFor="numeroTemas">Número de temas</label>
-                <input
-                  type="numb"
-                  max="12"
-                  name="numeroTemas"
-                  ref={this.numeroTemas}
-                  required
-                />
-              </div>
+              <br />
 
               <div className="clearfix"></div>
 
